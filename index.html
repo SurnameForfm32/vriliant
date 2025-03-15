@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories with Text</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            color: white;
+            cursor: url('images/custom-cursor.png') 16 16, auto; /* Custom cursor */
+        }
+        .container {
+            padding: 20px;
+        }
+        .category {
+            cursor: pointer;
+            font-size: 22px;
+            font-weight: bold;
+            padding: 20px; /* Increased padding for more space inside */
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px auto; /* Increased margin to space categories apart */
+            width: 50%; /* Adjust width for better spacing */
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+        .category:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+        .text {
+            display: none;
+            margin: 10px auto;
+            width: 60%;
+            padding: 15px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.3);
+            color: black;
+        }
+        .links {
+            margin-top: 20px;
+        }
+        .links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        .links a:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Click a Category to Reveal Text</h2>
+        
+        <div class="category" onclick="toggleText('text1')">Category 1</div>
+        <div id="text1" class="text">This is the text for category 1.</div>
+        
+        <div class="category" onclick="toggleText('text2')">Category 2</div>
+        <div id="text2" class="text">This is the text for category 2.</div>
+        
+        <div class="category" onclick="toggleText('text3')">Category 3</div>
+        <div id="text3" class="text">This is the text for category 3.</div>
+        
+        <div class="category" onclick="toggleText('text4')">Category 4</div>
+        <div id="text4" class="text">This is the text for category 4.</div>
+        
+        <div class="category" onclick="toggleText('text5')">Category 5</div>
+        <div id="text5" class="text">This is the text for category 5.</div>
+        
+        <div class="category" onclick="toggleText('text6')">Category 6</div>
+        <div id="text6" class="text">This is the text for category 6.</div>
+        
+        <div class="links">
+            <a href="YOUR_DISCORD_LINK" target="_blank">Join Discord</a> 
+            <a href="https://europethelastbattle.net" target="_blank">Europe The Last Battle</a>
+        </div>
+    </div>
+    
+    <script>
+        function toggleText(id) {
+            var text = document.getElementById(id);
+            text.style.display = (text.style.display === "none" || text.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
