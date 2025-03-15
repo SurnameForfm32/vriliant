@@ -3,88 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categories with Text</title>
+    <title>Creepy Wired-Core Example</title>
     <style>
+        /* Set a creepy background with dark colors */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Courier New', Courier, monospace;
             text-align: center;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #1e3c72, #2a5298);
-            color: white;
-            cursor: url('images/custom-cursor.png') 16 16, auto; /* Custom cursor */
+            background: linear-gradient(to right, #1c1c1c, #3b3b3b);
+            color: #f1f1f1;
+            cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="15" fill="red" /%3E%3Ccircle cx="20" cy="20" r="5" fill="black" /%3E%3C/svg%3E'), auto;
+            animation: flicker 2s infinite; /* Glitch flicker effect */
         }
+
+        /* Animation for flickering text effect */
+        @keyframes flicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.4; }
+            100% { opacity: 1; }
+        }
+
+        /* Container styling */
         .container {
             padding: 20px;
+            max-width: 80%;
+            margin: auto;
         }
+
+        /* Text styling */
+        h2 {
+            font-size: 3em;
+            color: #ff0000; /* Red text for a creepy feel */
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: bold;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); /* Red glow effect */
+            animation: flicker 1s infinite alternate;
+        }
+
         .category {
-            cursor: pointer;
             font-size: 22px;
             font-weight: bold;
-            padding: 20px; /* Increased padding for more space inside */
-            background: rgba(255, 255, 255, 0.2);
-            margin: 20px auto; /* Increased margin to space categories apart */
-            width: 50%; /* Adjust width for better spacing */
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            width: 50%;
             border-radius: 12px;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+            cursor: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40"%3E%3Ccircle cx="20" cy="20" r="15" fill="red" /%3E%3Ccircle cx="20" cy="20" r="5" fill="black" /%3E%3C/svg%3E'), pointer;
             transition: 0.3s;
+            animation: glitch 1.5s infinite; /* Glitch effect on hover */
         }
+
         .category:hover {
-            background: rgba(255, 255, 255, 0.4);
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
         }
+
         .text {
             display: none;
             margin: 10px auto;
             width: 60%;
             padding: 15px;
             border-radius: 12px;
-            background: rgba(255, 255, 255, 0.3);
-            color: black;
+            background: rgba(0, 0, 0, 0.5);
+            color: #ddd;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
+            animation: textFlicker 2s infinite; /* Flicker effect for text */
         }
+
+        @keyframes textFlicker {
+            0% { opacity: 1; }
+            50% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        /* Glitch animation for categories */
+        @keyframes glitch {
+            0% { text-shadow: 2px 2px 0px rgba(255, 255, 255, 0.5), -2px -2px 0px rgba(0, 0, 0, 0.3); }
+            20% { text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4), -4px -4px 0px rgba(0, 0, 0, 0.2); }
+            40% { text-shadow: 6px 6px 0px rgba(255, 255, 255, 0.3), -6px -6px 0px rgba(0, 0, 0, 0.1); }
+            60% { text-shadow: 8px 8px 0px rgba(255, 255, 255, 0.2), -8px -8px 0px rgba(0, 0, 0, 0); }
+            80% { text-shadow: 6px 6px 0px rgba(255, 255, 255, 0.3), -6px -6px 0px rgba(0, 0, 0, 0.1); }
+            100% { text-shadow: 4px 4px 0px rgba(255, 255, 255, 0.4), -4px -4px 0px rgba(0, 0, 0, 0.2); }
+        }
+
         .links {
             margin-top: 20px;
+            font-size: 20px;
         }
+
         .links a {
-            color: white;
+            color: #f1f1f1;
             text-decoration: none;
             font-size: 18px;
             padding: 10px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(0, 0, 0, 0.4);
             border-radius: 8px;
             transition: 0.3s;
+            animation: glitch 1.5s infinite; /* Glitch effect on links */
         }
+
         .links a:hover {
-            background: rgba(255, 255, 255, 0.5);
+            background: rgba(255, 0, 0, 0.7);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
         }
+
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Click a Category to Reveal Text</h2>
+        <h2>Welcome to the most Hated Website by Leftist.</h2>
+
+        <div class="category" onclick="toggleText('text1')">Banks!</div>
+        <div id="text1" class="text">The Jews, through their cunning and deceit, have infiltrated the financial institutions of Europe and beyond. They do not work for the honest prosperity of nations but instead manipulate economies for their own gain. Look at the great banks, the stock markets, the international money lenders—who sits at the top? The Jew, always scheming, always profiting from the suffering of the common folk. This is why Germany must rid itself of their influence, for only then can we reclaim our rightful economic independence.
+The Jewish elite has been controlling the financial world for centuries, and it's no different today. Just look at the Federal Reserve, Wall Street, and the IMF—who runs them? The same people who have always sought to enslave nations through debt and manipulation. The Rothschild banking dynasty didn’t disappear; they simply spread their influence across global institutions. The so-called ‘Great Reset’ and these worldwide economic collapses aren’t accidents—they are engineered events designed to make people more dependent on the system, a system run by Jewish financiers who profit from instability. Whenever a nationalist movement rises to defend its people, who is the first to call it ‘racist’ and ‘dangerous’? The Jewish-owned media. Who funds the politicians pushing for open borders and multiculturalism, diluting European identity? Jewish billionaires like George Soros. Just like in Weimar Germany, they flood our nations with degeneracy, pornography, and Marxist ideals, all while keeping the working class enslaved through inflation and economic control. Hitler saw through their lies, and so do we. That’s why they fear nationalism—because it exposes their grip on power. The truth is out there, and more people are waking up to it every day.</div>
+ 
+        <div class="category" onclick="toggleText('text2')">News channels!</div>
+        <div id="text2" class="text">The mainstream media is nothing more than a propaganda machine controlled by Jewish interests. Look at the CEOs, the major shareholders, the editorial boards—over and over, you see Jewish names at the top. CNN, MSNBC, The New York Times, The Washington Post—all of these outlets push the same globalist, left-wing, anti-white agenda. Why? Because they are run by the same group that has been manipulating public opinion for centuries.
+
+Who owns Hollywood? Jewish executives. Who runs the major news networks? Jewish billionaires. The media constantly pushes multiculturalism, feminism, LGBTQ propaganda, and ‘anti-racist’ narratives to weaken national identity and erode traditional values. Whenever someone speaks out against this system, they are smeared as ‘racist’ or ‘antisemitic’—a classic tactic to silence dissent. The reason nationalism is demonized and globalism is celebrated is because the people behind the scenes benefit from keeping nations weak, divided, and under control. The media is not about truth; it’s about brainwashing the masses to serve Jewish interests.</div>
         
-        <div class="category" onclick="toggleText('text1')">Category 1</div>
-        <div id="text1" class="text">This is the text for category 1.</div>
+        <div class="category" onclick="toggleText('text3')">Niggers!</div>
+        <div id="text3" class="text">Look at any country where Blacks are the majority—what do you see? Crime, poverty, corruption, and failure. Africa, Haiti, Detroit—no matter where they go, they bring destruction. This isn’t a coincidence; it’s genetic. Science has proven that the average Black IQ is lower than that of whites and Asians. No matter how much welfare, affirmative action, or special treatment they get, they can’t compete on an equal level. Instead, they leech off white societies, demanding handouts while blaming their failures on ‘racism.
+
+Who is pushing Black culture onto our youth? The Jewish-controlled media. They glorify rap music, degeneracy, and anti-white violence to brainwash young whites into embracing their own destruction. Look at how they flood our countries with Black immigrants, force integration, and push ‘diversity’ in every aspect of our lives. This is part of the bigger plan—to dilute white identity, break down strong nations, and create a mixed-race slave class that is easier to control. Blacks are being used as a weapon against us, and unless we fight back, our civilization will collapse just like every other place they have taken over. Jews once agian</div>
         
-        <div class="category" onclick="toggleText('text2')">Category 2</div>
-        <div id="text2" class="text">This is the text for category 2.</div>
+        <div class="category" onclick="toggleText('text4')">Muhammed the pedo!</div>
+        <div id="text4" class="text">The Quran is filled with contradictions and immoral teachings that show how flawed and dangerous Islam is. Take, for example, the way it justifies violence against non-believers. It says things like 'kill the infidels' (Quran 9:5) and commands Muslims to fight anyone who doesn’t accept their faith. This is not a religion of peace—this is a religion that promotes war, violence, and bloodshed. And when you look at the role of women in Islam, it becomes even clearer how backward it is. Women are treated as inferior, and their rights are often restricted by the teachings of the Quran. The Quran even says that men can have multiple wives (Quran 4:3) and that they can beat their wives if they are disobedient (Quran 4:34). These are not the teachings of a peaceful, civilized faith—they are the teachings of a system that seeks to control and oppress.
+
+And when you look at the figure of Muhammad himself, it’s hard to deny the flaws in his character. He’s portrayed as a warrior, a conqueror, and a man who imposed his will on others. He waged wars, enslaved people, and even married a child at 6 years old. The Quran and the Hadiths (the sayings of Muhammad) are filled with examples of this violent and oppressive mindset. How can we accept a religion that idolizes such a man? How can we allow a belief system that encourages its followers to follow these principles to gain a foothold in our countries?</div>
         
-        <div class="category" onclick="toggleText('text3')">Category 3</div>
-        <div id="text3" class="text">This is the text for category 3.</div>
+        <div class="category" onclick="toggleText('text5')">Muslim fags in general!</div>
+        <div id="text5" class="text">Muslims are invaders, not refugees. Europe is being flooded with millions of them under the guise of ‘asylum seeking,’ but in reality, this is an orchestrated invasion designed to replace the native white population. These people refuse to integrate, bringing their barbaric customs—Sharia law, child marriage, honor killings, and rape gangs—into our once-great nations. Just look at the no-go zones in Sweden, France, and Germany where even the police don’t dare enter. This isn’t immigration—it’s colonization.
+
+Wherever Islam spreads, destruction follows. The Middle East was once home to advanced civilizations, but after centuries of Islamic rule, it’s a wasteland of war, terrorism, and ignorance. The same thing is happening in the West now. These so-called ‘refugees’ aren’t fleeing war; they are bringing it with them. Their mosques are breeding grounds for extremism, their ideology is incompatible with Western values, and their birth rates guarantee that, if nothing is done, they will outnumber us within a few generations.
+
+And who is behind this mass migration? The Jews. The same people who control our banks and media are the ones pushing for open borders, flooding our countries with Muslims to weaken and divide us. Jewish politicians and NGOs, like George Soros’ Open Society Foundations, fund pro-immigration policies while demonizing anyone who resists as ‘racist’ or ‘Islamophobic.’ This is a deliberate strategy—the Great Replacement—to erase white identity and create a mixed-race, submissive slave class. Nationalism is the only way to stop this invasion before it’s too late.</div>
         
-        <div class="category" onclick="toggleText('text4')">Category 4</div>
-        <div id="text4" class="text">This is the text for category 4.</div>
-        
-        <div class="category" onclick="toggleText('text5')">Category 5</div>
-        <div id="text5" class="text">This is the text for category 5.</div>
-        
-        <div class="category" onclick="toggleText('text6')">Category 6</div>
-        <div id="text6" class="text">This is the text for category 6.</div>
+        <div class="category" onclick="toggleText('text6')">"refugees"!</div>
+        <div id="text6" class="text">Look around Europe—millions of so-called ‘refugees’ from Africa and the Middle East flood our borders, overwhelming our cities, increasing crime, and eroding our culture. Is this happening by accident? Of course not. This is a coordinated effort by the same people who control our banks, our media, and our governments. The Jews—through their NGOs, financial influence, and political connections—are behind the mass migration agenda, using asylum seekers as a weapon against white nations.
+
+Who funds these endless immigration waves? Jewish billionaires like George Soros, through organizations like Open Society Foundations, funnel millions into pro-immigration activism. The UN, the EU, and Western governments—all controlled by globalist Jewish interests—enforce open-border policies while demonizing anyone who speaks out against them as a ‘racist’ or ‘fascist.’ We saw the same strategy in Weimar Germany before Hitler took power: flood the nation with foreigners, erode traditional values, and create instability so that Jewish elites can maintain their power.
+
+They call it ‘diversity’—but what it really means is the destruction of European identity. The Kalergi Plan, a documented Jewish plot, openly talks about replacing Europeans with a mixed-race slave class to make them easier to control. Merkel, Macron, Biden—all puppets serving the same agenda. This is why nationalism must rise again to stop the ethnic cleansing of our people before it’s too late.</div>
         
         <div class="links">
-            <a href="YOUR_DISCORD_LINK" target="_blank">Join Discord</a> 
+            <a href="YOUR_DISCORD_LINK" target="_blank">Join Discord</a>
             <a href="https://europethelastbattle.net" target="_blank">Europe The Last Battle</a>
         </div>
     </div>
     
+<!-- Spinning PNG Image -->
+<img src="https://i.imgur.com/UOTwaEb.png" alt="Spinning Image" class="spinning-image">
+
+
     <script>
         function toggleText(id) {
             var text = document.getElementById(id);
